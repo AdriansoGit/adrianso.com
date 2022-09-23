@@ -49,6 +49,9 @@ window.onhashchange = function() { // To detect if the url has been changed
         $main.hide();
         $Contacts.hide();
     }
+    if(window.location.hash == "#undefined"){
+        window.location.hash = "#home";
+    }
 };
 
 window.onload = function() { // To run a function after reloading the page
