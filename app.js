@@ -59,7 +59,7 @@ window.onload = function() { // To run a function after reloading the page
         $SocialAccAlt.slideDown(100);
         $Dimmer.show();
     }
-    else if (window.location.hash == "#project" || window.location.hash == "#message"|| window.location.hash == "#location"){
+    else if (window.location.hash == "#project" || window.location.hash == "#message"|| window.location.hash == "#location" || window.location.hash == "#contacts"){
         window.location.hash = "#home";
     }
 };
