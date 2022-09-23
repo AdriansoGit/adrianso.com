@@ -1,0 +1,1119 @@
+@font-face {
+    font-family: "Roboto Slab Extra Light";
+    src: url(assets/fonts/RobotoSlab-ExtraLight.ttf);
+}
+*{
+    font-family: 'Open Sans', system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#dimmer{
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 600;
+    background-color: black;
+    opacity: .8;
+}
+#dimmer a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#background{
+    z-index: -10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0),rgb(10, 10, 10), rgb(20, 20, 20), rgb(40, 40, 40));
+
+}
+.contacts{
+    display: flex;
+    position: fixed;
+    right: 5%;
+    bottom: 30px;
+    z-index: 100;
+    width: 130px;   
+    justify-content: space-between;
+}
+.contacts span{
+    text-align: center;
+    cursor: pointer;
+    background-color: rgb(20, 20, 20);
+    box-shadow: 0 0 5px black;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    align-items: center;
+    margin: 5px;
+    width: 55px;
+    height: 55px;
+    padding: 10px 0;
+}
+.contacts span a{
+    display: block;
+    width: 55px;
+    height: 55px;
+    color: white;
+}
+.contacts span:hover{
+    font-size: 1.8rem;
+    padding-top: 8px;
+    box-shadow: 0 0 2px 2px white;
+    background-color: rgb(26, 25, 25);
+}
+.header_nav{
+    display: flex;
+    position: fixed;
+    background-color: rgb(14, 13, 13);
+    color: rgb(226, 221, 221);
+    box-shadow: 0 3px 3px rgb(83, 83, 83);
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 500;
+    top: 0;
+    max-width: 1440px;
+    min-width: 320px;
+}
+.header_nav ul{
+    width: 30%;
+    min-width: 450px;
+    margin-left: 5%;
+    font-size: 1rem;
+    display: flex;
+    position: relative;
+    list-style: none;
+    justify-content: space-between;
+}
+.header_nav ul li{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.header_nav ul li a{
+    padding: 19px 10px;
+    user-select: none;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+.header_nav ul li a p{
+    display: inline-block;
+}
+.header_nav ul li:hover{
+    background-color: rgb(27, 25, 25);
+    outline: 10px solid rgb(27, 25, 25);
+}
+.header_nav ul li:active{
+    background-color: rgb(19, 18, 18);
+    outline-color: rgb(19, 18, 18);
+}
+.header_nav #social-acc{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 130px;
+    margin-right: 5%;
+}
+.header_nav #social-acc i{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+}
+.header_nav #social-acc i:hover{
+    font-size: 1.8rem;
+}
+.header_nav #menu-but{
+    margin-right: 5%;
+    display: none;
+}
+.header_nav #menu-but a i{
+    font-size: 1.5rem;
+    color: white;
+}
+#social-acc-alt{
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgb(14, 11, 11);
+    box-shadow: 0 0 5px 0 rgb(104, 103, 103);
+    width: 200px;
+    height: 250px;
+    padding: 0 15px 15px;
+    z-index: 1000;
+    display: none;
+}
+#social-acc-alt #x-mark{
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    font-size: 1.2rem;
+    top: 15px;
+    right: 12px;
+    padding: 5px 8.6px;
+    background-color: #7c7c7c;
+    border-radius: 50%;
+}
+#social-acc-alt #h-div{
+    height: 80px;
+    color: white;
+    padding: 40px 10px 15px;
+    border-bottom: 2px solid rgb(107, 105, 105);
+}
+#social-acc-alt #a-div{
+    background-color: rgb(17, 14, 14);
+    height: 152px;
+    padding: 10px;
+}
+#social-acc-alt #a-div a{
+    display: block;
+    padding: 10px 0;
+    border-bottom: 2px solid rgb(107, 105, 105);
+    text-decoration: none;
+    color: white;
+}
+#social-acc-alt #a-div a:active{
+    background-color: rgb(37, 31, 31);
+}
+#social-acc-alt #a-div a i{
+    font-size: 1.3rem;
+    margin-right: 10px;
+}
+.header_nav span #arrow{
+    margin-left: 5px;
+    background-color: rgb(114, 113, 113);
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7px;
+    height: 100%;
+    padding: 5px;
+}
+.header_nav span #arrow i{
+    background-color: none;
+    color: black;
+}
+main{
+    margin: 80px 0 0;
+    padding-bottom: 100px;
+    overflow-x: hidden;
+    min-width: 320px;
+    max-width: 1440px;
+}
+main .H-container{
+    margin: 0 auto 50px;
+    display: flex;
+    width: 90%;
+    min-height: 555px;
+    align-items: center;
+    justify-content: space-between;
+}
+main .H-container .Intro{
+    color: rgb(223, 221, 221);
+    width: 50%;
+}
+main .H-container .Intro h1{
+    font-size: 3rem;
+    margin-right: 10px;
+}
+main .H-container .Intro p{
+    font-weight: light;
+    line-height: 1.6;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    font-family: "Roboto Slab Extra Light", 'Open Sans', system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+main .H-container .Intro p a{
+    text-decoration: none;
+    color: white;
+}
+main .H-container .Intro p strong:hover{
+    box-shadow: 0 3px white;
+    cursor: pointer;
+    user-select: none;
+}
+main .H-container .proj-img{
+    background-color: rgb(59, 59, 59);
+    border-radius: 20px;
+    min-width: 500px;
+    height: 400px;
+    padding: 10px;
+}
+main .H-container .proj-img img{
+    position: relative;
+    display: block;
+    margin: auto;
+    user-select: none;
+    width: 300px;
+    height: 300px;
+    border: 10px solid rgb(34, 32, 32);
+    box-shadow: 0 0 2px 2px white;
+    cursor: pointer;
+}
+main .H-container .proj-img .my-portfolio{
+    border: 1px solid white;
+    outline: 10px solid rgb(34, 32, 32);
+    box-shadow: 0 0 2px 12px white;
+    z-index: 5;
+    left: 120px;
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
+    top: 50px;
+}
+main .H-container .proj-img .fb-clone{
+    margin-top: -300px;
+    z-index: 4;
+    left: 40px;
+    -ms-transform: rotate(10deg);
+    transform: rotate(10deg);
+}
+main .H-container .proj-img .weebly{
+    margin-top: -300px;
+    z-index: 3;
+    left: -40px;
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+}
+main .H-container .proj-img .tesla-clone{
+    margin-top: -300px;
+    z-index: 2;
+    left: -120px;
+    -ms-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    top: 50px;
+}
+main .H-container .proj-img .img:hover{
+    z-index: 10;
+    transform: rotate(0deg);
+}
+main .H-container .proj-img #viewmore{
+    color: rgb(231, 231, 231);
+    margin-top: 50px;
+}
+main .H-container .proj-img #viewmore #viewmore-con{
+    display: block;
+    margin: auto;
+    user-select: none;
+    text-decoration: none;
+    box-shadow: 0 1.4px white;
+    color: rgb(231, 231, 231);
+    cursor: pointer;
+    width: 117.72px;
+}
+main .H-container .proj-img #viewmore #viewmore-con:hover{
+    box-shadow: 0 3px white;
+}
+main .H-container .proj-img #viewmore #viewmore-con p{
+    padding-bottom: 5px;
+    display: inline-block;
+    font-weight: bold;
+    line-height: .7;
+    font-size: 1.2rem;
+}
+main .aboutme{
+    display: grid;
+    grid-template-areas: "d h"
+                         "d p";
+    grid-template-rows: 30% 1fr;
+    grid-template-columns: 30% 65%;
+    margin: 0 auto;
+    width: 80%;
+    color: rgb(255, 255, 255);
+    background-color: rgb(36, 36, 36);
+    border-radius: 20px;
+    padding: 30px 50px;
+    justify-content: space-between;
+    box-shadow: 0 0 10px white;
+}
+main .aboutme h1{
+    grid-area: h;
+    font-size: 2.3rem;
+    align-self: center;
+}
+main .aboutme p{
+    text-align: justify;
+    grid-area: p;
+    font-weight: light;
+    font-family: "Roboto Slab Extra Light", 'Open Sans', system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    color: rgb(240, 243, 250);
+    line-height: 1.3;
+}
+main .aboutme #my-img{
+    grid-area: d;
+    align-self: center;
+}
+main .aboutme #my-img img{
+    display: block;
+    margin: auto;
+    width: 100%;
+    border-radius: 20px;
+    border: 10px solid rgb(59, 59, 59);
+}
+main #skills{
+    width: 70%;
+    margin: auto;
+    height: 80px;
+    background-color: #3d3c3c;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 0 20px black;
+}
+main #skills ul{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+main #skills ul li{
+    list-style-type: none;
+}
+main #skills .fa-brands{
+    font-size: 3rem;
+}
+main #skills img{
+    display: block;
+    width: 40px;
+}
+#contacts-projects{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-width: 320px;
+    height: 100vh;
+    background-color: rgb(14, 13, 13);
+    z-index: 1000;
+    color: rgb(177, 175, 175);
+    overflow-y: scroll;
+    margin: auto;
+    display: none;
+}
+#contacts-projects .not-active{
+    display: none;
+}
+#contacts-projects a i{
+    position: absolute;
+    color: rgb(177, 175, 175);
+    top: 35px;
+    left: 40px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+}
+#contacts-projects nav{
+    height: 160px;
+    overflow: hidden;
+    background-color: black;
+    position: relative;
+    z-index: 100;
+    min-width: 320px;
+}
+#contacts-projects nav h1{
+    margin-top: 30px;
+    margin-left: 110px;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    margin: 30px 0 40px 110px;
+}
+#contacts-projects nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-width: 334.97px;
+    height: 48px;
+}
+#contacts-projects nav ul li{
+    list-style-type: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 10px 15px;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    user-select: none;
+}
+#contacts-projects nav ul li.active{
+    background-color: rgb(14, 13, 13);
+    
+}
+#contacts-projects nav ul li:hover{
+    box-shadow: inset 0px -4px rgb(190, 190, 190);
+}
+#contacts-projects > div{
+    text-align: center;
+    height: calc(100vh - 160px);
+    position: relative;
+    width: 100%;
+    padding-top: 40px;
+}
+#contacts-projects #form-con{
+    height: calc(100vh - 60px);
+    height: 610px;
+    height: 600px;
+    margin-bottom: 100px;
+}
+#contacts-projects #form-con #form-background{
+    width: 100%;
+    max-width: 700px;
+    min-width: 320px;
+    margin: auto;
+    height: 380px;
+    border-radius: 30px;
+    background-color: gray;
+    position: relative;
+    top: -280px;
+    z-index: -1;
+}
+#contacts-projects #form-con form{
+    box-sizing: border-box;
+    width: 450px;
+    height: 400px;
+    background-color: #131212;
+    margin: 20px auto 0;
+    padding: 40px;
+    box-shadow: 0 0 10px 10px rgb(0, 0, 0);
+    outline: 3px solid rgb(143, 141, 141);
+    border-radius: 10px;
+}
+#contacts-projects #form-con p a{
+    color: rgb(218, 216, 216);
+    text-decoration: none;
+}
+#contacts-projects #form-con form .form{
+    width: 100%;
+    height: 40px;
+    display: block;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    color: white;
+    border-bottom: 3px solid rgb(95, 90, 90);
+    background-color: #131212;
+    font-size: large;
+}
+#contacts-projects #form-con form textarea.form{
+    margin-top: 40px;
+}
+#contacts-projects #form-con form button.form{
+    margin-top: 60px;
+    background-color: black;
+    border-bottom: none;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 50px;
+}
+#contacts-projects #form-con form button.form:hover{
+    background-color: rgb(8, 8, 8);
+}
+#contacts-projects #loc-con{
+    padding-top: 50px;
+    min-height: 500px;
+    margin-bottom: 60px;
+}
+#contacts-projects #loc-con #loc-box-con{
+    width: 100%;
+    height: 94%;
+    max-height: 500px;
+    margin: auto;
+}
+#contacts-projects #loc-con #loc-background{
+    position: relative;
+    width: 100%;
+    top: -50%;
+    height: 1px;
+}
+#contacts-projects #loc-con #loc-background::before, #contacts-projects #loc-con #loc-background::after{
+    background-color: rgb(153, 150, 150);
+    content: "";
+    height: 35px;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+#contacts-projects #loc-con #loc-background::after{
+    left: 0;
+    top: 15px;
+}
+#contacts-projects #loc-con #loc-background::before{
+    left: 0;
+    top: -50px;
+}
+#contacts-projects #loc-con #Loc-Box{
+    width: 80%;
+    height: 100%;
+    max-height: 500px;
+    margin: auto;
+    background-color: rgb(14, 13, 13);
+}
+#contacts-projects #loc-con #Loc-Box img{
+    display: block;
+    border-radius: 10px;
+    width: 99%;
+    height: 100%;
+    object-fit: cover;
+    margin: auto;
+    border: 10px solid rgb(43, 42, 42);
+}
+#contacts-projects #proj-con{
+    height: auto;
+}
+#contacts-projects #proj-con #proj-list{
+    width: fit-content;
+    margin: auto;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: min-content;
+    column-gap: 20px;
+    margin-bottom: 100px;
+}
+#contacts-projects #proj-con #proj-list div{
+    height: fit-content;
+    width: 280px;
+    min-width: 280px;
+    padding: 20px 20px 15px;
+    background-color: rgb(44, 44, 44);
+    border-radius: 20px;
+
+}
+#contacts-projects #proj-con #proj-list div a{
+    text-decoration: none;
+}
+#contacts-projects #proj-con #proj-list div a img{
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+}
+#contacts-projects #proj-con #proj-list div a p{
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-top: 10px;
+}
+#contacts-projects #footer{
+    height: 122px;
+    width: 100%;
+    background-image: linear-gradient(rgb(5, 5, 5), rgb(10, 10, 10), rgb(10, 10, 10), rgb(10, 10, 10), rgb(16, 16, 16));
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    box-shadow: 0 0 0 30px #131212 inset !important;
+    -webkit-text-fill-color: white !important;
+}
+@media only screen and (max-width: 1200px) {
+    #contacts-projects #proj-con #proj-list{
+        grid-template-rows: min-content min-content;
+        row-gap: 30px;
+        column-gap: 5vw;
+    }
+}
+@media only screen and (min-width: 1170px) {
+    main .aboutme p{
+        font-size: 1.1rem;
+        max-width: 500px;
+        line-height: 1.4;
+    }
+}
+@media only screen and (max-width: 1060px){
+    .header_nav ul{
+        margin-right: 40px;
+    }
+    main .H-container{
+        flex-wrap: wrap;
+        margin-bottom: 80px;
+    }
+    main .H-container .proj-img{
+        width: 80%;
+        margin: auto;
+    }
+    main .H-container .Intro{
+        width: 100%;
+        margin: 70px 0% 50px;
+        text-align: center;
+    }
+    main .H-container .Intro h1{
+        font-size: 2.7rem;
+    }
+    main .H-container .Intro p{
+        font-size: 1.1rem;
+    }
+    main .H-container .proj-img img{
+        width: 400px;
+    }
+    main .H-container .proj-img .my-portfolio{
+        left: 160px;
+        top: 40px;
+    }
+    main .H-container .proj-img .fb-clone{
+        left: 70px;
+        top: -10px;
+    }
+    main .H-container .proj-img .weebly{
+        left: -70px;
+        top: -10px;
+    }
+    main .H-container .proj-img .tesla-clone{
+        left: -160px;
+        top: 40px;
+    }
+    main .aboutme{
+        width: 90%;
+    }
+    main .aboutme p{
+        text-align: start;
+    }
+}
+@media only screen and (max-width: 900px){
+    .header_nav ul{
+        min-width: 400px;
+    }
+    main .H-container .proj-img img{
+        width: 50%;
+    }
+    main .H-container .proj-img .my-portfolio{
+        left: 120px;
+        top: 40px;
+    }
+    main .H-container .proj-img .fb-clone{
+        left: 50px;
+        top: -10px;
+    }
+    main .H-container .proj-img .weebly{
+        left: -50px;
+        top: -10px;
+    }
+    main .H-container .proj-img .tesla-clone{
+        left: -120px;
+        top: 40px;
+    }
+    main .aboutme{
+        grid-template-rows: 20% 1fr;
+    }
+    main .aboutme p{
+        font-size: .9rem;
+    }
+    main .aboutme h1{
+        font-size: 2rem;
+        margin-top: -15px;
+    }
+}
+@media only screen and (max-width: 780px) {
+    main .aboutme{
+        padding: 30px 25px;
+        width: 95%;
+    }
+}
+@media only screen and (max-width: 680px){
+    .header_nav ul{
+        min-width: 250px;
+    }
+    .header_nav ul li a i{
+        font-size: 1.4rem;
+    }
+    .header_nav ul li a p{
+        display: none;
+    }
+    .header_nav #social-acc{
+        min-width: 120px;
+    }
+    .header_nav #social-acc i{
+        font-size: 1.3rem;
+    }
+    .header_nav #social-acc i:hover{
+        font-size: 1.6rem;
+    }
+    main .H-container .Intro h1 br{
+        display: block;
+    }
+    main .H-container .Intro h1{
+        font-size: 2.5rem;
+    }
+    main .H-container .Intro p{
+        font-size: 1rem;
+    }
+    main .H-container .proj-img{
+        width: 90%;
+        min-width: 430px;
+        height: 370px;
+    }
+    main .H-container .proj-img img{
+        width: 280px;
+        height: 280px;
+    }
+    main .H-container .proj-img .my-portfolio{
+        left: 80px;
+        top: 20px;
+        -ms-transform: rotate(20deg);
+        transform: rotate(20deg);
+    }
+    main .H-container .proj-img .fb-clone{
+        margin-top: -280px;
+        left: 30px;
+        top: -20px;
+        -ms-transform: rotate(5deg);
+        transform: rotate(5deg);
+    }
+    main .H-container .proj-img .weebly{
+        margin-top: -280px;
+        left: -30px;
+        top: -20px;
+        -ms-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+    main .H-container .proj-img .tesla-clone{
+        margin-top: -280px;
+        left: -80px;
+        top: 20px;
+        -ms-transform: rotate(-20deg);
+        transform: rotate(-20deg);
+    }
+    main .H-container .proj-img #viewmore{
+        margin-top: 40px;
+    }
+    main .H-container .proj-img #viewmore #viewmore-con p{
+        font-size: 1rem;
+        text-align: center;
+    }
+    main .H-container .proj-img #viewmore #viewmore-con{
+        width: 102px;
+    }
+    main .aboutme{
+        grid-template-rows: 20% 1fr;
+    }
+    main .aboutme p{
+        font-size: .8rem;
+    }
+    main .aboutme h1{
+        font-size: 1.8rem;
+    }
+    #contacts-projects nav h1{
+        font-size: 1.8rem;
+        margin-top: 34px;
+    }
+    #contacts-projects nav ul li{
+        font-size: 1.2rem;
+    }
+    #contacts-projects #loc-con #loc-box-con #Loc-Box{
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 610px) {
+    main .aboutme{
+        padding: 20px 15px;
+    }
+    main .aboutme p{
+        line-height: 1.1;
+    }
+    #contacts-projects #proj-con{
+        height: auto;
+    }
+    #contacts-projects #proj-con #proj-list{
+        grid-template-rows: repeat(4, min-content);
+    }
+    #contacts-projects #proj-con #proj-list > div{
+        width: 80%;
+        margin: auto;
+    }
+    
+}
+@media only screen and (max-width: 570px) {
+    main .H-container{
+        margin-bottom: 100px;
+    }
+    main .aboutme{
+        width: 90%;
+        min-width: 320px;
+        grid-template-areas: "h"
+                             "d"
+                             "p";
+        grid-template-columns: 90%;
+        grid-template-rows: 40px minmax(218px, 1fr) auto;
+        justify-content: center;
+        row-gap: 15px;
+        padding: 20px 5px;
+    }
+    main .aboutme p{
+        width: 95%;
+        max-width: 358px;
+        margin: auto;
+        font-size: .8rem;
+        text-align: justify;
+        align-self: center;
+    }
+    main .aboutme h1{
+        text-align: center;
+        margin: 0;
+    }
+    main .aboutme #my-img{
+        margin: auto;
+    }
+    main .aboutme #my-img img{
+        width: 300px;
+    }
+}
+@media only screen and (max-width: 510px) {
+    .header_nav{
+        height: 70px;
+    }
+    .header_nav ul{
+        min-width: 200px;
+        margin-right: 20px;
+        margin-left: 2%;
+    }
+    .header_nav ul li:hover{
+        outline: 0;
+    }
+    .header_nav #social-acc{
+        min-width: 100px;
+        margin-right: 2%;
+    }
+    main{
+        margin-top: 70px;
+    }
+    main .H-container{
+        margin-bottom: 80px;
+        width: 100%;
+    }
+    main .H-container .Intro{
+        margin: 60px 5% 50px;
+    }
+    main .H-container .Intro h1{
+        font-size: 1.9rem;
+    }
+    main .H-container .Intro p{
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    main .H-container .proj-img{
+        width: 90%;
+        min-width: 320px;
+        height: 350px;
+    }
+    main .H-container .proj-img img{
+        width: 230px;
+        height: 230px;
+    }
+    main .H-container .proj-img .my-portfolio{
+        left: 100px;
+        top: 40px;
+    }
+    main .H-container .proj-img .fb-clone{
+        margin-top: -230px;
+        top: 20px;
+    }
+    main .H-container .proj-img .weebly{
+        margin-top: -230px;
+        top: 20px;
+    }
+    main .H-container .proj-img .tesla-clone{
+        margin-top: -230px;
+        top: 40px;
+        -ms-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+    main .H-container .proj-img #viewmore{
+        margin-top: 55px;
+    }
+    main #skills{
+        min-width: 270px;
+    }
+    main #skills .fa-brands{
+        font-size: 2.5rem;
+    }
+    main #skills img{
+        width: 35px;
+    }
+    #contacts-projects a i{
+        left: 30px;
+    }
+    #contacts-projects nav h1{
+        font-size: 1.5rem;
+        margin-top: 37px;
+        margin-bottom: 43px;
+        margin-left: 90px;
+    }
+    #contacts-projects nav ul li{
+        font-size: 1.1rem;
+    }
+    #contacts-projects #form-con form{
+        width: 100%;
+        min-width: 320px;
+    }
+    #contacts-projects #loc-con #loc-box-con{
+        height: 400px;
+    }
+    #contacts-projects #loc-con #loc-box-con #Loc-Box{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 392px) {
+    .header_nav ul{
+        margin-right: 0;
+    }
+    .header_nav #social-acc{
+        display: none;
+    }
+    .header_nav #menu-but{
+        display: flex;
+    }
+    main .H-container .Intro{
+        min-width: 320px;
+    }
+    main .H-container .Intro h1{
+        font-size: 1.8rem;
+    }
+    main .H-container .Intro p{
+        font-size: 0.7rem;
+    }
+    main .H-container .proj-img{
+        height: 330px;
+    }
+    main .H-container .proj-img img{
+        width: 200px;
+        height: 200px;
+    }
+    main .H-container .proj-img .my-portfolio{
+        left: 100px;
+        top: 40px;
+    }
+    main .H-container .proj-img .fb-clone{
+        margin-top: -200px;
+        top: 20px;
+    }
+    main .H-container .proj-img .weebly{
+        margin-top: -200px;
+        top: 20px;
+    }
+    main .H-container .proj-img .tesla-clone{
+        margin-top: -200px;
+        top: 40px;
+        -ms-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+    main .aboutme{
+        width: 100%;
+        grid-template-columns: 100%;
+    }
+    main #skills{
+        min-width: 250px;
+    }
+    #contacts-projects a i{
+        left: 20px;
+    }
+    #contacts-projects nav h1{
+        font-size: 1.5rem;
+        margin-top: 37px;
+        margin-bottom: 43px;
+        margin-left: 80px;
+    }
+    #contacts-projects nav ul{
+        min-width: 310px;
+    }
+    #contacts-projects nav ul li{
+        font-size: 1rem;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .header_nav ul{
+        margin-right: 40px;
+    }
+    main #skills{
+        margin: 0 35px;
+    }
+    main .H-container .Intro{
+        margin: 60px 0 50px;
+    }
+    main .H-container .Intro h1, main .H-container .Intro p{
+        margin: 0;
+    }
+    main .H-container .proj-img{
+        overflow: hidden;
+    }
+}
+@media only screen and (min-width: 1440px) {
+    body{
+        max-width: 1440px;
+        margin: auto;
+    }
+    .header_nav{
+        background-color: black;
+        box-shadow: none;
+    }
+    .contacts{
+        right: calc((100vw - 1440px) / 2);
+        margin-right: calc(1440px * .05);
+    }
+    #contacts-projects{
+        width: 1440px;
+    }
+}
+@media only screen and (min-height: 1290px){
+    .contacts{
+        top: 1192px;
+        bottom: auto;
+    }
+}
+@media only screen and (min-height: 900px) and (min-width: 1366px){
+    #contacts-projects{
+        max-height: 1400px;
+    }
+    #contacts-projects #form-con{
+        height: calc(100% - 382px);
+        max-height: 1300px;
+        margin-bottom: 100px;
+    }
+    #contacts-projects #form-con form{
+        height: 60%;
+        min-height: 400px;
+        width: 50%;
+        max-height: 436px;
+    }
+    #contacts-projects #form-con #form-background{
+        width: 70%;
+        max-width: none;
+        height: 60%;
+        min-height: 380px;
+        top: max(calc(-1*(40% + 42px)), -334px);
+        max-height: 436px;
+    }
+    #contacts-projects #loc-con{
+        max-height: 1340px;
+    }
+    #contacts-projects #loc-con #loc-box-con{
+        height: 80%;
+        max-height: 1000px;
+    }
+    #contacts-projects #loc-con #loc-box-con #Loc-Box{
+        max-height: 1000px;
+    }
+    #contacts-projects #proj-con{
+        height: calc(100% - 285px);
+    }
+}
+@media only screen and (min-height: 750px) and (min-width: 610px) {
+    #contacts-projects{
+        max-height: 1400px;
+    }
+    #contacts-projects #loc-con{
+        margin: 0;
+        height: calc(100vh - 282px);
+    }
+    #contacts-projects #proj-con{
+        height: calc(100% - 285px);
+        /* min-height: 1456px; */
+    }
+    #contacts-projects #form-con{
+        height: calc(100% - 382px);
+        max-height: 1300px;
+        margin-bottom: 100px;
+    }
+}
